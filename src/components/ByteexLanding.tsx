@@ -716,3 +716,5 @@ export default function ByteexLanding() {
     </div>
   )
 }
+
+export { ByteexLanding }
