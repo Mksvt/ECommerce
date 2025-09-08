@@ -1,9 +1,10 @@
-import AdvancedCustomerManagement from './components/AdvancedCustomerManagement'
+import ByteexLanding from './components/ByteexLanding'
+import './globals.css'
 
 function App() {
   return (
     <div className="min-h-screen">
-      <AdvancedCustomerManagement />
+      <ByteexLanding />
     </div>
   )
 }
