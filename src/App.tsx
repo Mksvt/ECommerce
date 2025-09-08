@@ -1,9 +1,9 @@
-import CustomerManagement from './components/CustomerManagement'
+import AdvancedCustomerManagement from './components/AdvancedCustomerManagement'
 
 function App() {
   return (
-    <div className="min-h-screen bg-background">
-      <CustomerManagement />
+    <div className="min-h-screen">
+      <AdvancedCustomerManagement />
     </div>
   )
 }
