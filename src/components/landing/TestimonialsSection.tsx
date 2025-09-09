@@ -54,6 +54,7 @@ export const TestimonialsSection = () => {
             </div>
           ))}
         </div> */}
+        <img src="/Many.jpg" alt="testimonials" className="w-full h-[372.99560546875px] rounded-lg mb-12" />
 
         {/* Testimonials Carousel */}
         <div className="relative max-w-4xl mx-auto">

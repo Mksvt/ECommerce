@@ -15,33 +15,38 @@ export const ImpactSection = () => {
     <div className="bg-gray-50">
       <div>
         <div className="text-center">
-          <h2 className="text-4xl lg:text-5xl font-light text-gray-900">
+          <div className='bg-[#F0EEEF]'>
+            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 pt-4">
             Our total green impact
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8 mb-16 mt-16 pb-16">
             <div className="text-center">
-              <div className="text-4xl font-light text-gray-900 mb-2">
+              <div className="text-4xl font-light text-gray-900 mb-2 flex flex-col items-center">
+                <img src="/Component6.png" alt="co2" className="w-10 h-10 inline-block mb-2" />
                 3,927 kg
               </div>
               <div className="text-gray-600">of CO2 saved</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-light text-gray-900 mb-2">
+              <div className="text-4xl font-light text-gray-900 mb-2 flex flex-col items-center">
+                <img src="/Component7.png" alt="water" className="w-10 h-10 inline-block mb-2" />
                 2,546,187 days
               </div>
               <div className="text-gray-600">of drinking water saved</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-light text-gray-900 mb-2">
+              <div className="text-4xl font-light text-gray-900 mb-2 flex flex-col items-center">
+                <img src="/Component8.png" alt="energy" className="w-10 h-10 inline-block mb-2" />
                 7,321 kWh
               </div>
               <div className="text-gray-600">of energy saved</div>
             </div>
           </div>
+        </div>
 
-          <h3 className="text-3xl lg:text-4xl font-light text-gray-900 mb-8">
-            Find something you love.
+        <h3 className="text-3xl lg:text-4xl font-light text-gray-900 mb-8">
+          Find something you love.
           </h3>
           <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
