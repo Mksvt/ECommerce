@@ -1,7 +1,5 @@
 import * as prismic from '@prismicio/client';
 
-export const repositoryName = 'your-repo-name'; // Заміни на свій репозиторій
+export const repositoryName = 'my-website1';
 
-export const client = prismic.createClient(repositoryName, {
-  // Додай тут опції, якщо потрібно
-});
+export const client = prismic.createClient(repositoryName, {});

@@ -1,13 +1,22 @@
-import { Button } from '@/components/ui/button';
-import {
-  ArrowRight,
-  Star,
-  Package,
-  Sparkles,
-  Droplets,
-} from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Star, Package, Sparkles, Droplets } from "lucide-react";
+import * as prismic from "@prismicio/client";
 
-export const HeroSection = () => {
+interface HeroSectionProps {
+  title: prismic.KeyTextField;
+  subtitle: prismic.KeyTextField;
+  description: prismic.RichTextField;
+  buttonText: prismic.KeyTextField;
+  image: prismic.ImageField;
+}
+
+export const HeroSection = ({
+  title,
+  subtitle,
+  description,
+  buttonText,
+  image,
+}: HeroSectionProps) => {
   return (
     <div className="bg-white relative">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,12 +24,29 @@ export const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-6">
+              {/* Лого або бренд */}
               <div className="text-[50px] font-bold text-black">BYTEEX</div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight font-bold">
-                Don't apologize for being{' '}
-                <span className="text-gray-900">comfortable.</span>
-              </h1>
 
+              {/* Title */}
+              {title && (
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight font-bold">
+                  {title}
+                </h1>
+              )}
+
+              {/* Subtitle */}
+              {subtitle && (
+                <h2 className="text-xl text-gray-700">{subtitle}</h2>
+              )}
+
+              {/* Description */}
+              {description && (
+                <p className="text-gray-600 text-lg">
+                  {prismic.asText(description)}
+                </p>
+              )}
+
+              {/* Features list (залишив приклади з іконками) */}
               <div className="space-y-4 text-gray-600">
                 <div className="flex items-start space-x-3">
                   <Sparkles className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
@@ -31,9 +57,7 @@ export const HeroSection = () => {
 
                 <div className="flex items-start space-x-3">
                   <Package className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
-                  <span>
-                    No wasteful extras, like tags or plastic packaging.
-                  </span>
+                  <span>No wasteful extras, like tags or plastic packaging.</span>
                 </div>
 
                 <div className="flex items-start space-x-3">
@@ -46,24 +70,33 @@ export const HeroSection = () => {
               </div>
             </div>
 
-            <div>
+            {/* CTA Button */}
+            {buttonText && (
               <Button className="bg-[#01005B] hover:bg-gray-800 text-white px-8 py-4 rounded-md font-medium">
-                Customize Your Outfit
+                {buttonText}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </div>
+            )}
           </div>
 
-          {/* Right Content - Hero Images */}
+          {/* Right Content - Hero Image */}
           <div className="relative">
-            <img
-              src="/HeroSection.png"
-              alt="Decorative"
-              className="w-full h-auto rounded-lg"
-            />
+            {image?.url ? (
+              <img
+                src={image.url}
+                alt={image.alt ?? "Hero image"}
+                className="w-full h-auto rounded-lg"
+              />
+            ) : (
+              <img
+                src="/HeroSection.png"
+                alt="Fallback hero"
+                className="w-full h-auto rounded-lg"
+              />
+            )}
           </div>
 
-          {/* Customer Review - floating box */}
+          {/* Customer Review floating box */}
           <div className="absolute left-0 top-[450px] bg-white shadow-md p-5 rounded-lg max-w-sm">
             <div className="flex items-center space-x-3 mb-3">
               <img
@@ -86,7 +119,7 @@ export const HeroSection = () => {
             <p className="text-sm text-gray-600">
               Overjoyed with my Loungewear set. I have the jogger and the
               sweatshirt. Quality product on every level. From the compostable
-              packaging, to the supplied washing bag, even the garments smells
+              packaging, to the supplied washing bag, even the garments smelled
               like fresh herbs when I first held them.
             </p>
           </div>
@@ -103,13 +136,29 @@ export const HeroSection = () => {
               Canadian Living
             </div>
             <div className="text-lg font-light text-gray-400">
-                <img src="/Artboard2.png" alt="Jillian Harris" className="inline-block h-6" />
+              <img
+                src="/Artboard2.png"
+                alt="Jillian Harris"
+                className="inline-block h-6"
+              />
             </div>
-            <div className="text-lg font-light text-gray-400"><img src='/Artboard4.png' alt='The Eco Hub' className="inline-block h-8" /></div>
-            <div className="text-lg font-light text-gray-400"><img src='/Artboard5.png' alt='TRENDHUNTER' className="inline-block h-8" /></div>
+            <div className="text-lg font-light text-gray-400">
+              <img
+                src="/Artboard4.png"
+                alt="The Eco Hub"
+                className="inline-block h-8"
+              />
+            </div>
+            <div className="text-lg font-light text-gray-400">
+              <img
+                src="/Artboard5.png"
+                alt="TRENDHUNTER"
+                className="inline-block h-8"
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
