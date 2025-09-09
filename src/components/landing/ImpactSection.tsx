@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck, Star, Package, Heart, Shield } from "lucide-react";
+import { ArrowRight, Truck, Heart, Shield } from "lucide-react";
 import * as prismic from "@prismicio/client";
 
 interface ImpactSectionProps {
