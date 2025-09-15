@@ -25,7 +25,7 @@ export const HeroSection = ({
           <div className="space-y-8">
             <div className="space-y-6">
               {/* Лого або бренд */}
-              <div className="text-[50px] font-bold text-black">BYTEEX</div>
+              <div className="text-[50px] font-bold text-black">Maksym Ecom</div>
 
               {/* Title */}
               {title && (
