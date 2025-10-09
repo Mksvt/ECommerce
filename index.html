@@ -1,10 +1,41 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/HeroSection.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecom</title>
+    <meta
+      name="description"
+      content="eCom - ваш надійний партнер у світі електронної комерції. Сучасні рішення для вашого бізнесу."
+    />
+
+    <!-- Preconnect to Google Fonts if used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Load Google Fonts asynchronously -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/src/globals.css" as="style" />
+    <link rel="preload" href="/src/main.tsx" as="script" />
+
+    <!-- Preload critical images -->
+    <link rel="preload" href="/HeroSection.png" as="image" />
+    <link rel="preload" href="/avatar.png" as="image" />
+
+    <title>eCom Project</title>
   </head>
   <body>
     <div id="root"></div>
