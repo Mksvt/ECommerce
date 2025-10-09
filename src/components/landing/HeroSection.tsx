@@ -108,7 +108,7 @@ export const HeroSection = ({
             ) : image?.url ? (
               <img
                 src={image.url}
-                alt={image.alt ?? "Hero image"}
+                alt={image.alt ?? 'Hero image'}
                 className="w-full h-auto rounded-lg"
                 loading="lazy"
                 width={image.dimensions?.width}
